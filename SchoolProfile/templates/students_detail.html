@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="spinner-grow text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-secondary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-danger" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-warning" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-info" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-dark" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<h1>{{object.SurName}} {{object.FirstName}} {{object.LastName}} Details</h1>
+
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th scope="col">Field</th>
+        <th scope="col">Information</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td><strong>SURNAME</strong></td><td>{{object.SurName}}</td></tr>
+    <tr><td><strong>FIRST NAME</strong></td><td>{{object.FirstName}}</td></tr>
+    <tr><td><strong>LAST NAME</strong></td><td>{{object.LastName}}</td></tr>
+    <tr><td><strong>SEX</strong></td><td>{{object.Sex}}</td></tr>
+    <tr><td><strong>BIRTH DATE</strong></td><td>{{object.Birth_date}}</td></tr>
+    <tr><td><strong>RELIGION</strong></td><td>{{object.Religion}}</td></tr>
+    <tr><td><strong>WEIGHT</strong></td><td>{{object.Weight}}</td></tr>
+    <tr><td><strong>HEIGHT</strong></td><td>{{object.Height}}</td></tr>
+    <tr><td><strong>STATE OF ORIGIN</strong></td><td>{{object.State_of_origin}}</td></tr>
+    <tr><td><strong>LOCAL GOVERNMENT AREA</strong></td><td>{{object.Local_government_Area}}</td></tr>
+    <tr><td><strong>COMPLEXION</strong></td><td>{{object.complexion}}</td></tr>
+    <tr><td><strong>NAME OF PARENT OR GUARDIAN</strong></td><td>{{object.Name_of_parent_or_guardian}}</td></tr>
+    <tr><td><strong>ADDRESS OF PARENT OR GUARDIAN</strong></td><td>{{object.Address_of_parent_or_guardian}}</td></tr>
+    <tr><td><strong>PHONE NUMBER</strong></td><td>{{object.Phone_number}}</td></tr>
+    <tr><td><strong>IN CASE OF EMERGENCY CALL</strong></td><td>{{object.In_case_of_emergency_call}}</td></tr>
+    <tr><td><strong>E-MAIL</strong></td><td>{{object.E_mail}}</td></tr>
+    <tr><td><strong>BLOOD GROUP</strong></td><td>{{object.Blood_group}}</td></tr>
+    <tr><td><strong>GENOTYPE</strong></td><td>{{object.genotype}}</td></tr>
+    <tr><td><strong>ADMISSION DATE</strong></td><td>{{object.Admission_date}}</td></tr>
+<tr><td><strong>ADMISSION NUMBER</strong></td><td>{{object.Admission_number}}</td></tr>
+<tr><td><strong>PREVIOUS CLASS</strong></td><td>{{object.previous_class}}</td></tr>
+    <tr><td><strong>NEXT CLASS</strong></td><td>{{object.next_class}}</td></tr>
+    </tbody>
+</table>
+
+{% endblock content %}

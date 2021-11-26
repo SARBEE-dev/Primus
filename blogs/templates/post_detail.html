@@ -1,0 +1,46 @@
+
+{% extends 'base.html' %}
+{% block content %}
+<article class="media content-section">
+	<img class="rounded-circle article-img" src="{{object.author.profile.image.url}}">
+	<div class="media-body">
+	<div class="article-metadata">
+	<a class="mr-2" href="{% url 'user_posts' object.author.username %}">{{ object.author }}</a>
+	<small class="text-muted">{{ object.date_posted|date:"F d, Y" }}</small>
+		{% if object.author == user %}
+		<div>
+		<a class="btn btn-secondary btn-sm mt-1 mb-1" href="{% url 'update-view' object.id %}">Update</a>
+		<a class="btn btn-danger btn-sm mt-1 mb-1" href="{% url 'post-delete' object.id %}">Delete</a>
+			</div>
+		{% endif %}
+	</div>
+	<h4 class="article-title {{ object.title }}</h4>
+	<p class="article-content">{{ object.content }}</p>
+
+		<h2 class="text-success">Comments</h2>
+		<a class="btn btn-primary btn-sm mt-1 mb-1" href="{% url 'create-comment' %}">Add comment</a>
+		{% if not post.comments.all %}
+		<p>No Comments Yet ...</p>
+		{% else %}
+		{% for comment in post.comments.all %}
+		<br/>
+		<hr/>
+		<figure>
+  <blockquote class="blockquote">
+	  <figcaption class="blockquote-header">
+    Posted on <cite title="Source Title">-{{comment.date_created}}</cite>
+  </figcaption>
+    <p class="text-dark p-3">{{comment.content}}</p>
+  </blockquote>
+  <figcaption class="blockquote-footer">
+     <cite title="Source Title">By {{comment.name}}</cite>
+  </figcaption>
+</figure>
+		<hr/>
+		<br/>
+				{% endfor %}
+		{% endif %}
+	</div>
+	</article>
+{% endblock content %}
+

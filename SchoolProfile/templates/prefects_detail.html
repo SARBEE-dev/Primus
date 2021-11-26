@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="spinner-grow text-primary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-secondary" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-danger" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-warning" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-info" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-success" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+<div class="spinner-grow text-dark" role="status">
+  <span class="visually-hidden">Loading...</span>
+</div>
+
+<h1 class="text-warning">{{object.SurName}} {{object.FirstName}}  Details</h1>
+
+
+<table class="table table-bordered">
+    <thead>
+    <tr>
+        <th scope="col">FIELD</th>
+        <th scope="col">INFORMATION</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr><td>Surname</td><td>{{object.SurName}}</td></tr>
+    <tr><td>First Name</td><td>{{object.FirstName}}</td></tr>
+        <tr><td>Other Names</td><td>{{object.OtherNames}}</td><tr/>
+    <tr><td>Birth Date</td><td>{{object.BirthDate}}</td><tr/>
+    <tr><td>Religion</td><td>{{object.Religion}}</td><tr/>
+    <tr><td>Age</td><td>{{object.Age}}</td><tr/>
+    <tr><td>State of Origin</td><td>{{object.StateOfOrigin}}</td><tr/>
+    <tr><td>Local Government Area</td><td>{{object.LocalGovernmentArea}}</td><tr/>
+    <tr><td>Post</td><td>{{object.Office}}</td><tr/>
+    <tr><td><strong>Wise Quote</strong></td><td>{{object.WiseQuote}}</td><tr/>
+    <tr><td>Class</td><td>{{object.Class}}</td><tr/>
+    <tr><td>Career</td><td>{{object.Career}}</td><tr/>
+    <tr><td>Favourite Teacher</td><td>{{object.FavouriteTeacher}}</td><tr/>
+    <tr><td>Role Model</td><td>{{object.RoleModel}}</td><tr/>
+    <tr><td>Skills</td><td>{{object.Skills}}</td><tr/>
+    <tr><td>FavouriteFood</td><td>{{object.FavouriteFood}}</td><tr/>
+    <tr><td>Favourite Musics</td><td>{{object.FavouriteMusic}}</td><tr/>
+    <tr><td>Favourite Tv Shows</td><td>{{object.FavouriteTvShows}}</td><tr/>
+    <tr><td>Department</td><td>{{object.Department}}</td><tr/>
+    <tr><td>Dislikes</td><td>{{object.Dislikes}}</td><tr/>
+    <tr><td>Year Inducted</td><td>{{object.YearInducted}}</td><tr/>
+
+
+    </tbody>
+</table>
+{% endblock content %}
