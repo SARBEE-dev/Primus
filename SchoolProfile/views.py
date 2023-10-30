@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import SchoolProfile, SchoolPrefect, Dates
 from django.views.generic import DetailView, ListView, CreateView, UpdateView, DeleteView
+from django.db.models import Q
 # Create your views here.
 '''def Primus(request):
     context = {
@@ -13,6 +14,17 @@ class SchoolListView(ListView):
     template_name = 'Primus.html'
     context_object_name = 'schools'
     ordering = ['-Admission_date']
+
+def search(request):
+    query = request.GET.get("q")
+    if query:
+        school = SchoolProfile.objects.filter(Q(SurName__icontains=query)|Q(FirstName__icontains=query))
+    else:
+        school = SchoolProfile.objects.all()
+    #context = {school: school}
+    return render(request, 'search.html', {"school":school})
+
+
 
 class SchoolDetailView(DetailView):
     model = SchoolProfile
@@ -35,7 +47,7 @@ class StudentUpdateView(UpdateView):
               'Blood_group','genotype', 'Admission_date', 'Admission_number', 'previous_class',
               'current_class', 'profile_picture']
 
-    
+
 class StudentDeleteView(DeleteView):
     model = SchoolProfile
     template_name = 'students_delete.html'
